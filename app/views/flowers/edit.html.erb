@@ -1,0 +1,24 @@
+<h1>修改花花</h1>
+
+<%= link_to "返回列表", flowers_path %>
+
+<%= form_for(@flower) do |form| %>
+<%= form.label :species , "花花種類" %>
+<%= form.text_field :species %>
+
+<br>
+<%= form.label :color , "花花顏色" %>
+<%= form.text_field :color %>
+
+<br>
+<%= form.label :price , "花花價格" %>
+<%= form.text_field :price %>
+
+<br>
+<%= form.label :sell , "花花銷售量" %>
+<%= form.text_field :sell %>
+
+<br>
+
+<%= form.submit %>
+<% end %>

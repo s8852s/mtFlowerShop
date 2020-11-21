@@ -1,0 +1,32 @@
+<h1>花花列表</h1>
+<%= flash[:notice] %>
+
+<%= link_to "新增花花", new_flower_path %>
+
+
+<table>
+    <thead>
+        <tr>
+            <td>花花種類</td>
+            <td>花花顏色</td>
+            <td>花花價格</td>
+            <td>花花銷售量</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @flowers.each do |flower| %>
+        <tr>
+            <td><%= flower.species %></td>
+            <td><%= flower.color %></td>
+            <td><%= flower.price %></td>
+            <td><%= flower.sell %></td>
+            <td>
+                <%= link_to "修改", edit_flower_path(flower) %>
+                <%= link_to "刪除", flower_path(flower), method: "delete", data: { confirm:"確定要刪除嗎?" } %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+
+</table>
